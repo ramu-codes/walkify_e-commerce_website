@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walkify</title>
+    <link rel="shortcut icon" href="images/fav.jpg" type="image/x-icon" background-size="cover">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- swiper js cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- header section starts -->
+
+    <header class="header">
+
+        <a href="#" class="logo"> <i class="fas fa-shoe-prints"></i> shoes</a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#products">products</a>
+            <a href="#featured">featured</a>
+            <a href="#review">review</a>
+            <a href="#contact">contact</a>
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="cart.html" class="fas fa-shopping-cart" id="cart-icon">
+                <span id="cart-count">0</span> 
+            </a>
+            <a href="favorite.html" class="fas fa-heart" id="favorite-icon">
+                <span id="favorite-count">0</span> 
+            </a>
+        </div>
+
+        <form action="" class="search-form">
+            <input type="search" name="" id="search-box" placeholder="search here...">
+            <label class="fas fa-search"></label>
+        </form>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts -->
+
+    <section class="home" id="home">
+
+        <div class="slides-container">
+            
+            <div class="slide active">
+                <div class="content">
+                    <span>new winter</span>
+                    <h3>shoes collection</h3>
+                    <p>Explore Walkify, your premier destination for authentic Nike footwear. Elevate your style with durable, performance-driven shoes for every need.</p>
+                    <button class="btn">
+                        <span>shop now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="image">
+                    <img src="images/header-1.png" alt="">
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="content">
+                    <span>new winter</span>
+                    <h3>shoes collection</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim consequatur reprehenderit.</p>
+                    <button class="btn">
+                        <span>shop now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="image">
+                    <img src="images/header-2.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div id="slide-next" onclick="next()" class="fas fa-angle-right"></div>
+        <div id="slide-prev" onclick="prev()" class="fas fa-angle-left"></div>
+
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- latest product section starts -->
+
+    <section class="products" id="products">
+
+        <h1 class="heading"><span>latest</span> products</h1>
+
+        <div class="box-container">
+
+            <div class="box" data-product-id="1">
+                <div class="image">
+                    <img src="images/product-1.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>nike shoes</h3>
+                    <div class="price">₹ 12,999</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(50)</span>
+                    </div>
+                    <p  class="btn"> <i class="far fa-heart" onclick="toggleFavorite(event, 1)"></i></p>
+                </div>
+            </div>
+
+            <div class="box" data-product-id="2">
+                <div class="image">
+                    <img src="images/product-2.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>nike shoes</h3>
+                    <div class="price">₹ 14,999</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(50)</span>
+                    </div>
+                    <p  class="btn"> <i class="far fa-heart" onclick="toggleFavorite(event, 2)"></i></p>
+                </div>
+            </div>
+
+            <div class="box" data-product-id="3">
+                <div class="image">
+                    <img src="images/product-3.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>nike shoes</h3>
+                    <div class="price">₹ 8,999</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(50)</span>
+                    </div>
+                    <p  class="btn"> <i class="far fa-heart" onclick="toggleFavorite(event, 3)"></i></p>
+                </div>
+            </div>
+
+            <div class="box" data-product-id="4">
+                <div class="image">
+                    <img src="images/product-4.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>nike shoes</h3>
+                    <div class="price">₹ 9,999</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(50)</span>
+                    </div>
+                    <p  class="btn" > <i class="far fa-heart" onclick="toggleFavorite(event, 4)"></i></p>
+                </div>
+            </div>
+
+            <div class="box" data-product-id="5">
+                <div class="image">
+                    <img src="images/product-5.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>nike shoes</h3>
+                    <div class="price">₹ 10,999</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(50)</span>
+                    </div>
+                    <p  class="btn"> <i class="far fa-heart" onclick="toggleFavorite(event, 5)"></i></p>
+                </div>
+            </div>
+
+            <div class="box" data-product-id="6" style="width: 300px; border: 1px solid #ddd; padding: 10px; text-align: center;">
+                <div class="image" ondblclick="openPopup(event)" style="width: 100%; overflow: hidden;">
+                    <img 
+                        src="images/product-6.png" 
+                        alt="Nike Shoes" 
+                        style="width: 100%; height: auto; max-width: 100%; max-height: 300px; display: block; object-fit: contain;"
+                    >
+                </div>
+                <div class="content">
+                    <h3>Nike Shoes</h3>
+                    <div class="price">₹ 8,999</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(50)</span>
+                    </div>
+                    <p class="btn">
+                        <i class="far fa-heart" onclick="toggleFavorite(event, 6)"></i>
+                    </p>
+                </div>
+            </div>
+            
+            
+            <!-- Popup Modal for Purchase Form -->
+            <div id="purchase-popup" class="popup" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4);">
+                <div class="popup-content" style="background-color: #fff; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 500px;">
+                    <span class="close-btn" onclick="closePopup()" style="color: #aaa; font-size: 28px; font-weight: bold; position: absolute; right: 10px; top: 5px; cursor: pointer;">&times;</span>
+                    <h2>Buy Nike Shoes</h2>
+                    <form id="purchase-form" style="max-width: 500px; margin: 0 auto;">
+                        <!-- Name Field -->
+                        <label for="name" style="font-weight: bold; margin-bottom: 5px; display: block;">Name:</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required 
+                            placeholder="Enter your name" 
+                            style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;"
+                        >
+                        
+                        <!-- Address Field -->
+                        <label for="address" style="font-weight: bold; margin-bottom: 5px; display: block;">Address:</label>
+                        <input 
+                            type="text" 
+                            id="address" 
+                            name="address" 
+                            required 
+                            placeholder="Enter your address" 
+                            style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;"
+                        >
+                        
+                        <!-- Payment Method -->
+                        <label for="payment" style="font-weight: bold; margin-bottom: 5px; display: block;">Payment Method:</label>
+                        <select 
+                            id="payment" 
+                            name="payment" 
+                            required 
+                            style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;"
+                        >
+                            <option value="" disabled selected>Select a payment method</option>
+                            <option value="credit-card">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                        
+                        <!-- Submit Button -->
+                        <input 
+                            type="submit" 
+                            value="Complete Purchase" 
+                            style="background-color: #4CAF50; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px;"
+                        >
+                    </form>
+                    
+                </div>
+            </div>
+            
+
+        </div>
+
+    </section>
+
+    <!-- latest product section ends -->
+
+    <!-- banner section starts -->
+
+    <section class="banner-container">
+
+        <div class="banner">
+            <img src="images/banner1.jpg" alt="">
+            <div class="content">
+                <span>limited offer</span>
+                <h3>upto 40% off</h3>
+                <button class="btn">
+                    <span>shop now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="banner">
+            <img src="images/banner2.jpg" alt="">
+            <div class="content">
+                <span>limited offer</span>
+                <h3>upto 40% off</h3>
+                <button class="btn">
+                    <span>shop now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- banner section ends -->
+
+    <!-- featured product section starts -->
+
+    <section class="featured" id="featured">
+
+        <h1 class="heading"><span>featured</span> products</h1>
+
+        <div class="swiper featured-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide slide">
+                    <span class="discount">-25%</span>
+                    <div class="image">
+                        <img src="images/product-1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nike shoes</h3>
+                        <div class="price">₹ 9,999 </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="btn" onclick="addToCart('Nike Shoes', '20.00', 'images/product-1.png')">add to cart</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <span class="discount">-25%</span>
+                    <div class="image">
+                        <img src="images/product-2.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nike shoes</h3>
+                        <div class="price">₹ 10,999</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p  class="btn" onclick="addToCart('Nike Shoes', '20.00', 'images/product-2.png')">add to cart</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <span class="discount">-25%</span>
+                    <div class="image">
+                        <img src="images/product-3.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nike shoes</h3>
+                        <div class="price">₹ 7,999</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p  class="btn" onclick="addToCart('Nike Shoes', '20.00', 'images/product-3.png')">add to cart</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <span class="discount">-25%</span>
+                    <div class="image">
+                        <img src="images/product-4.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nike shoes</h3>
+                        <div class="price">₹ 8,999</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="btn" onclick="addToCart('Nike Shoes', '20.00', 'images/product-4.png')">add to cart</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <span class="discount">-25%</span>
+                    <div class="image">
+                        <img src="images/product-5.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nike shoes</h3>
+                        <div class="price"></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="btn" onclick="addToCart('Nike Shoes', '20.00', 'images/product-5.png')" >add to cart</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <span class="discount">-25%</span>
+                    <div class="image">
+                        <img src="images/product-6.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nike shoes</h3>
+                        <div class="price">9,999</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="btn" onclick="addToCart('Nike Shoes', '20.00', 'images/product-6.png')">add to cart</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
+
+    </section>
+
+    <!-- featured product section ends -->
+
+    <!-- review section starts -->
+
+    <section class="review" id="review">
+
+        <h1 class="heading"><span>client's</span> review</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <!-- <div class="image">
+                    <img src="images/pic-1.png" alt="">
+                </div> -->
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                     
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>VK Yadav</h3>
+                    <p>"I recently purchased a pair of Nike running shoes from Walkify, and my overall experience was quite good. The website's design is clean, and the navigation is straightforward. I loved the detailed product descriptions and the variety of options available. However, the delivery took a bit longer than expected, which is why I’m giving 4 stars instead of 5. Still, I’d recommend it for anyone looking for authentic Nike footwear!"</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <!-- <div class="image">
+                    <img src="images/pic-2.png" alt="">
+                </div> -->
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Nitin Verma</h3>
+                    <p>"Absolutely fantastic shopping experience! Walkify offers a wide range of Nike shoes at great prices. The customer support was responsive and resolved my query about sizing within minutes. My shoes were delivered ahead of schedule, and the packaging was excellent. The quality is exactly as promised. I’m thrilled with my purchase and will definitely shop again!"</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <!-- <div class="image">
+                    <img src="images/pic-3.png" alt="">
+                </div> -->
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                       
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Mohit Gupta</h3>
+                    <p>"Walkify is a great platform for Nike shoe lovers like me. The collection is impressive, and I found the exact pair I was looking for. The site is user-friendly, and checkout was hassle-free. My only issue was with the return policy; it could be a bit more flexible. Overall, I’m happy with the service and the product. Will shop again soon!"</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- review section ends -->
+
+    <!-- send gift section starts -->
+
+    <section class="send">
+
+        <div class="container">
+
+            <div class="content">
+                <h2 class="title">send gift now</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur culpa quibusdam porro.</p>
+                <form action="">
+                    <input type="text" class="input" placeholder="House Address">
+                    <a href="#" class="btn">send</a>
+                </form>
+            </div>
+            <div class="image">
+                <img src="images/Send gift.png" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- send gift section ends -->
+
+    <!-- contact section starts -->
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading"><span>contact</span> us</h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="images/contact.png" alt="">
+            </div>
+
+            <form action="https://formspree.io/f/xeoqprwl" method="POST"> 
+                <h3>get in touch</h3>
+                <div class="inputBox">
+                    <input name="text" placeholder="Your Name">
+                    <input name="email" placeholder="Your Email">
+                </div>
+                <div class="inputBox">
+                    <input name="number" placeholder="Your Number">
+                    <input name="text" placeholder="Your Subject">
+                </div>
+                <textarea name="message" placeholder="Your Message" cols="30" rows="10"></textarea>
+                <input type="submit" value="send message" class="btn">
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- contact section ends -->
+
+    <!-- footer section starts -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>about us</h3>
+                <p>"At Walkify, we are dedicated to delivering premium, authentic Nike footwear, blending style, performance, and comfort for every step."</p>
+            </div>
+
+            <div class="box">
+                <h3>our services</h3>
+                <a href="#home">pricing</a>
+                <a href="#products">discount</a>
+                <a href="#products">refund policy</a>
+                <a href="#products">shipping mode</a>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#home">home</a>
+                <a href="#products">products</a>
+                <a href="#featured">featured</a>
+                <a href="#review">review</a>
+            </div>
+
+            <div class="box">
+                <h3>social links</h3>
+                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin"> <i class="fab fa-facebook-f"></i> facebook</a>
+                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin"> <i class="fab fa-twitter"></i> twitter</a>
+                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin"> <i class="fab fa-instagram"></i> instagram</a>
+                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin"> <i class="fab fa-linkedin"></i> linkedin</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="credit">
+        &copy; copyright @ 2024 by Walkify
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- swiper js cdn link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="script.js"></script>
+</body>
+</html>

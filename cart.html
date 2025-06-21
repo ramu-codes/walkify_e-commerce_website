@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Your Cart</h1>
+
+    <header class="header">
+        <a href="index.html" class="logo"><i class="fas fa-shoe-prints"></i> shoes</a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#products">products</a>
+            <a href="#featured">featured</a>
+            <a href="#review">review</a>
+            <a href="#contact">contact</a>
+        </nav>
+
+        <div class="icons">
+            <a href="cart.html" class="fas fa-shopping-cart" id="cart-icon">
+                <span id="cart-count">0</span>
+            </a>
+            <a href="favorite.html" class="fas fa-heart" id="favorite-icon">
+                <span id="favorite-count"></span>
+            </a>
+        </div>
+    </header>
+
+    <section class="favorites" id="favorites">
+        <h1 class="heading"> <span>Your</span> Cart </h1>
+        <div class="box-container" id="cart-items">
+        </div>
+    </section>
+
+    <script>
+        function displayCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            if (cartItems.length === 0) {
+                document.getElementById('cart-items').innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                let cartHtml = "";
+                cartItems.forEach((item, index) => {
+                    cartHtml += `
+                        <div class="cart-item" id="item-${index}">
+                            <img src="${item.image}" alt="Product Image" style="width:250px; height:auto;" />
+                            <h3>${item.name}</h3>
+                            <p>Price: $${item.price}</p>
+                            <button onclick="deleteItem(${index})">Remove</button>
+                        </div>
+                    `;
+                });
+                document.getElementById('cart-items').innerHTML = cartHtml;
+            }
+        }
+
+        function deleteItem(index) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            displayCartItems();
+            updateCartCount(); // Update the cart count after deletion
+        }
+
+        function updateCartCount() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            document.getElementById('cart-count').textContent = cartItems.length;
+        }
+
+        window.onload = function() {
+            displayCartItems(); // Display the cart items
+            updateCartCount();  // Update the cart count on page load
+        };
+    </script>
+
+</body>
+</html>

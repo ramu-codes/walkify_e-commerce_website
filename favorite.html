@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Favorites - Walkify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="favorite.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo"><i class="fas fa-shoe-prints"></i> Shoes</a>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#featured">Featured</a>
+            <a href="#review">Review</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="icons">
+            <a href="cart.html" class="fas fa-shopping-cart" id="cart-icon">
+                <span id="cart-count"></span>
+            </a>
+            <a href="favorite.html" class="fas fa-heart" id="favorite-icon">
+                <span id="favorite-count"></span>
+            </a>
+        </div>
+    </header>
+
+    <section class="favorites" id="favorites">
+        <h1>Your <span>Favorites</span></h1>
+        <div class="box-container" id="favorites-list"></div>
+    </section>
+
+    <script>
+        function loadFavorites() {
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            const favoritesList = document.getElementById('favorites-list');
+
+            if (favorites.length === 0) {
+                favoritesList.innerHTML = '<h2>You have no favorite products yet.</h2>';
+                return;
+            }
+
+            const productData = [
+                { id: 1, name: 'Nike Shoes', image: 'images/product-1.png', price: '$170.00' },
+                { id: 2, name: 'Nike Shoes', image: 'images/product-2.png', price: '$180.00' },
+                { id: 3, name: 'Nike Shoes', image: 'images/product-3.png', price: '$170.00' },
+                { id: 4, name: 'Nike Shoes', image: 'images/product-4.png', price: '$180.00' },
+                { id: 5, name: 'Nike Shoes', image: 'images/product-5.png', price: '$170.00' },
+                { id: 6, name: 'Nike Shoes', image: 'images/product-6.png', price: '$180.00' }
+            ];
+
+            favoritesList.innerHTML = '';
+
+            favorites.forEach(productId => {
+                const product = productData.find(p => p.id === productId);
+                if (product) {
+                    const productDiv = document.createElement('div');
+                    productDiv.classList.add('box');
+                    productDiv.innerHTML = `
+                        <div class="image">
+                            <img src="${product.image}" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>${product.name}</h3>
+                            <div class="price">${product.price}</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(50)</span>
+                            </div>
+                            <p class="btn" onclick="removeFavorite(${product.id})">
+                                <i class="fas fa-trash"></i> Remove
+                            </p>
+                        </div>
+                    `;
+                    favoritesList.appendChild(productDiv);
+                }
+            });
+        }
+
+        function removeFavorite(productId) {
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            favorites = favorites.filter(id => id !== productId);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            loadFavorites();
+            updateFavoriteCount();
+        }
+
+        function updateFavoriteCount() {
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            document.getElementById('favorite-count').textContent = favorites.length;
+        }
+
+        window.onload = function() {
+            loadFavorites();
+            updateFavoriteCount();
+        };
+    </script>
+
+</body>
+</html>
